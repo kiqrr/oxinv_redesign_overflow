@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Resolve";
+  src: url("/fonts/resolve.otf");
+  font-weight: 100;
+}
+
+.header__montSerrat {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.10vw;
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+}
+
+.header_resolve { 
+  font-family: 'Resolve', sans-serif;
+  font-weight: 400;
+  letter-spacing: .05vw;
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+}
