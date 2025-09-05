@@ -79,7 +79,6 @@ debugData([
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
   const manager = useDragDropManager();
-  const inventoryRef = useRef<{ openInventory: () => void; closeInventory: () => void }>(null);
 
   useNuiEvent<{
     locale: { [key: string]: string };
@@ -100,15 +99,10 @@ const App: React.FC = () => {
     manager.dispatch({ type: 'dnd-core/END_DRAG' });
   });
 
-  const handleCloseClick = (event: HandleCloseClickEvent): void => {
-    if (event.target === event.currentTarget) {
-      inventoryRef.current?.closeInventory();
-    }
-  }
 
   return (
-    <div className="app-wrapper" onClick={handleCloseClick}>
-      <InventoryComponent ref={inventoryRef} />
+    <div className="app-wrapper">
+      <InventoryComponent />
       <DragPreview />
       <KeyPress />
     </div>

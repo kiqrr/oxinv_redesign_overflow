@@ -19,13 +19,6 @@ const Inventory = forwardRef((_, ref) => {
   const [inventoryVisible, setInventoryVisible] = useState(false);
   const dispatch = useAppDispatch();
 
-  useImperativeHandle(ref, () => ({
-    openInventory: () => setInventoryVisible(true),
-    closeInventory: () => {
-      fetchNui("forceCloseInventory");
-    }
-  }));
-
   useNuiEvent<boolean>('setInventoryVisible', setInventoryVisible);
   useNuiEvent<false>('closeInventory', () => {
     setInventoryVisible(false);
