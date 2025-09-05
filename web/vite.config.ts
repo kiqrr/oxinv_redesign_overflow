@@ -11,6 +11,18 @@ export default defineConfig({
   build: {
     outDir: 'build',
     target: 'esnext',
+    cssCodeSplit: false,
+    minify: false,
+    rollupOptions: {
+      output: {
+        assetFileNames: (asset) => {
+          if (asset.name && asset.name.endsWith('.css')) {
+            return '[name].[hash][extname]'
+          }
+          return 'assets/[name].[hash][extname]'
+        }
+      }
+    }
   },
   define: {
     'process.env': {},
