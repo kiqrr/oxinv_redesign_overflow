@@ -49,7 +49,7 @@ const InventoryGrid: React.FC<{ inventory: Inventory, renderControl?: boolean, m
               </span>*/
             }
 
-            <div style={{ border: "4px solid #2f303183", backgroundColor: "rgba(10, 10, 10, .98)" }} className='flex justify-around items-center p-3 rounded-xl '>
+            <div style={{ border: "4px solid #2f303183"}} className='flex justify-around items-center p-3 rounded-xl bg-main/98'>
               <span className='flex items-center gap-2'>
                 <Backpack color='#EFEFF0' />
                 <p className='text-[#EFEFF0] text-2xl'>INVENTORY</p>
@@ -62,9 +62,9 @@ const InventoryGrid: React.FC<{ inventory: Inventory, renderControl?: boolean, m
 
       <div
           className={`relative inventory-grid-wrapper rounded-xl
-           transition-all duration-300
+           transition-all duration-300 bg-gradient-to-br from-main via-main/95 to-main
           ${meta?.isDropInventory?.value ? meta.isDropInventory.shouldRender ? "opacity-100 h-auto p-3 pb-5 border-4" : "opacity-0 h-0 scale-y-[50%] scale-x-0 p-0" : "p-3 pb-5 border-4" }`}
-          style={{ pointerEvents: isBusy ? 'none' : 'auto', backgroundColor: "rgba(10, 10, 10, .99)", borderColor: "#2f303188" }}
+          style={{ pointerEvents: isBusy ? 'none' : 'auto', borderColor: "#2f303188" }}
       >
         <div>
  

@@ -37,8 +37,7 @@ const SlotTooltip: React.ForwardRefRenderFunction<
       ) : (
         <div style={{ ...style }} className="tooltip-wrapper" ref={ref}>
           <div 
-            className="tooltip-header-wrapper text-white border-r-2 border-b-2 border-white rounded-sm px-2 border-box"
-            style={{ backgroundImage: "linear-gradient(to top right, #0A0A0A, #0A0A0A)" }}
+            className="tooltip-header-wrapper text-white border-r-2 border-b-2 border-white rounded-sm px-2 border-box bg-main"
           >
             <p className='flex-1'>{item.metadata?.label || itemData.label || item.name}</p>
             {inventoryType === 'crafting' ? (
@@ -67,9 +66,9 @@ const SlotTooltip: React.ForwardRefRenderFunction<
             )}
           </div>
 
-          <div className='bg-white px-2 py-[.25rem] bg-black/30 rounded-md mt-2 mt-2 border-b-2 shadow-md border-black/60' style={{ color: "rgba(0, 0, 0, 0.6)" }}>
+          <div className='bg-white px-2 py-[.25rem] bg-black/30 rounded-md mt-2 mt-2 border-b-2 shadow-md border-black/60 text-black/60'>
             {description ? (
-              <div className="tooltip-description mb-1" style={{ color: "rgba(0, 0, 0, 0.6)" }}>
+              <div className="tooltip-description mb-1">
                 <ReactMarkdown className="tooltip-markdown">{description}</ReactMarkdown>
               </div>
             ) : 
@@ -84,19 +83,19 @@ const SlotTooltip: React.ForwardRefRenderFunction<
               <div className='flex flex-wrap gap-1'>
                 
                 {item.durability !== undefined && (
-                  <div style={{ backgroundColor: "#4C4C4C" }} className='text-white bg-black/70 w-fit px-[.35rem] rounded-md m-0 p-0 text-[12px] gap-1 flex items-center'>
+                  <div className='bg-black/60 text-white bg-black/70 w-fit px-[.35rem] rounded-md m-0 p-0 text-[12px] gap-1 flex items-center'>
                     <DurabilityIcon />
                     <span className='text-red'>{Math.trunc(item.durability)}</span>
                   </div>
                 )}
                 {item.metadata?.ammo !== undefined && (
-                  <div style={{ backgroundColor: "#4C4C4C" }} className='text-white bg-black/70 w-fit px-[.35rem] rounded-md m-0 p-0 text-[12px] gap-1 flex items-center'>
+                  <div className='bg-black/60 text-white bg-black/70 w-fit px-[.35rem] rounded-md m-0 p-0 text-[12px] gap-1 flex items-center'>
                     <AmmoIcon />
                     <span className='text-red'>{item.metadata.ammo}</span>
                   </div>
                 )}
                 {item.metadata?.serial && (
-                  <div style={{ backgroundColor: "#4C4C4C" }} className='text-white bg-black/70 w-fit px-[.35rem] rounded-md m-0 p-0 text-[12px] gap-1 flex items-center'>
+                  <div className='bg-black/60 text-white bg-black/70 w-fit px-[.35rem] rounded-md m-0 p-0 text-[12px] gap-1 flex items-center'>
                     <FingerPrintIcon />
                     <span className='text-red'>{item.metadata.serial}</span>
                   </div>

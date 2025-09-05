@@ -124,7 +124,9 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
       ref={refs}
       onContextMenu={handleContext}
       onClick={handleClick}
-      className="inventory-slot rounded-sm"
+      className={`inventory-slot rounded-sm 
+        ${isOver ? "bg-secondary" : "bg-secondary/90"}
+        `}
       style={{
         filter:
           !canPurchaseItem(item, { type: inventoryType, groups: inventoryGroups }) || !canCraftItem(item, inventoryType)
@@ -135,8 +137,6 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
         backgroundSize: "80%",
         transition: ".1s all ease-in-out",
         transform: isOver ? 'scale(1.04)' : "",
-        // border: isOver ? '3px solid rgba(255,255,255, 1)' : '',
-        backgroundColor: isOver ? "#414142ff" : "#303132",
       }}
     >
       {isSlotWithItem(item) && (
